@@ -1,0 +1,9 @@
+{
+    "private": true,
+    "description": "研究报告底稿 Chrome 扩展（开发依赖）",
+    "name": "research-report-extension",
+    "version": "1.0.0",
+    "dependencies": {
+        "exceljs": "^4.4.0"
+    }
+}

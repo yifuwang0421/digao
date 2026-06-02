@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+lib/
+
+# Build / bundle output
+dist/
+build/
+*.crx
+*.pem
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Lock files (simple single-dependency project, no need to track)
+package-lock.json

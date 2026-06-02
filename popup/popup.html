@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>研究报告底稿工具</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- 头部 -->
+  <header class="app-header">
+    <div class="header-content">
+      <h1>📋 研究报告底稿</h1>
+      <span class="badge" id="entryCount" title="已采集条目数">0</span>
+    </div>
+  </header>
+
+  <!-- 截图区域 -->
+  <section class="capture-section">
+    <div class="capture-row">
+      <button id="btnCapture" class="btn btn-primary btn-capture">
+        📸 截取可视区域
+      </button>
+      <button id="btnAreaCapture" class="btn btn-area btn-capture">
+        ✂️ 选区截图
+      </button>
+    </div>
+    <div class="capture-row" style="margin-top:6px">
+      <div id="screenshotStatus" class="screenshot-status hidden">
+        <span class="status-icon">✅</span>
+        <span>截图已获取</span>
+        <span id="screenshotSize" class="size-info"></span>
+      </div>
+    </div>
+    <div id="screenshotPreview" class="screenshot-preview hidden">
+      <img id="previewImage" alt="截图预览">
+    </div>
+  </section>
+
+  <!-- 录入表单 -->
+  <section class="form-section">
+    <div class="form-group">
+      <label for="inputSheetName">📂 Sheet 名称</label>
+      <input type="text" id="inputSheetName" placeholder="如: 第一章-行业分析">
+    </div>
+    <div class="form-group">
+      <label for="inputUrl">🔗 网页网址</label>
+      <input type="text" id="inputUrl" placeholder="自动获取当前网页 URL" readonly>
+    </div>
+    <div class="form-row">
+      <div class="form-group form-group-inline">
+        <label for="inputPageNum">📑 报告页码 <span class="required">*</span></label>
+        <input type="text" id="inputPageNum" placeholder="如: P-001" required>
+      </div>
+      <div class="form-group form-group-inline">
+        <label for="inputNote">📝 备注</label>
+        <input type="text" id="inputNote" placeholder="可选备注说明">
+      </div>
+    </div>
+    <button id="btnSave" class="btn btn-success btn-block" disabled>
+      💾 保存底稿条目
+    </button>
+  </section>
+
+  <!-- 提示消息 -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- 操作栏 -->
+  <section class="actions-bar">
+    <button id="btnExport" class="btn btn-export">
+      📊 导出 Excel 底稿
+    </button>
+    <button id="btnClearAll" class="btn btn-clear-all">
+      🗑️ 清空
+    </button>
+  </section>
+
+  <!-- 条目列表 -->
+  <section class="entries-section">
+    <h2>已采集底稿条目</h2>
+    <div id="entriesList" class="entries-list">
+      <div class="empty-state">
+        <p>📭 暂无底稿条目</p>
+        <p class="hint">点击截图按钮开始采集</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
